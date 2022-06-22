@@ -6,6 +6,7 @@ import 'package:products_crud/router/app_router.gr.dart';
 import 'package:redux/redux.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   var store = await createStore();
   runApp(MyApp(store));
 }

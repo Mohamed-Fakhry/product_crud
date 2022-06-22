@@ -21,9 +21,9 @@ class GetProductsAction {
 class SyncProductsAction {
   final String actionName = "SyncProductsAction";
   final List<Product> products;
-  final Page page;
+  final Page? page;
 
-  SyncProductsAction(this.products, this.page);
+  SyncProductsAction(this.products, {this.page});
 }
 
 class SyncProductAction {

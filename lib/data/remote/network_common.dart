@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 
 class NetworkCommon {
   static final NetworkCommon _singleton = NetworkCommon._internal();
-  static const String baseUrl = "https://api.schoolie.website/";
+  static const String baseUrl = "https://orders.test.shout-out.website/";
 
   factory NetworkCommon() {
     return _singleton;

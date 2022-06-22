@@ -29,13 +29,13 @@ class AppRouter extends _i2.RootStackRouter {
 
   @override
   List<_i2.RouteConfig> get routes =>
-      [_i2.RouteConfig(ProductRoute.name, path: '/login')];
+      [_i2.RouteConfig(ProductRoute.name, path: '/')];
 }
 
 /// generated route for
 /// [_i1.ProductPage]
 class ProductRoute extends _i2.PageRouteInfo<void> {
-  const ProductRoute() : super(ProductRoute.name, path: '/login');
+  const ProductRoute() : super(ProductRoute.name, path: '/');
 
   static const String name = 'ProductRoute';
 }

@@ -7,27 +7,18 @@ import 'network_common.dart';
 class ProductsRepository {
   const ProductsRepository();
 
-  Future<Pair<Page, List<Product>>> getProducts(
-    int page,
-  ) {
-    Map<String, dynamic> query = {
-      "page": page,
-      "limit": 20,
-    };
-
+  Future<List<Product>> getProducts() {
     return NetworkCommon()
         .dio
-        .get("products", queryParameters: query)
+        .get(
+          "products",
+        )
         .then((response) {
-      Page page = Page.fromJson(response.data);
-      List<Product> products = (response.data['docs'] as List)
+      List<Product> products = (response.data as List)
           .map((product) => Product.fromJson(product))
           .toList();
 
-      return Pair(
-        page,
-        products,
-      );
+      return products;
     });
   }
 

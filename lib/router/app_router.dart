@@ -5,7 +5,7 @@ import '../features/products_page.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: ProductPage, path: '/login'),
+    AutoRoute(page: ProductPage, initial: true),
   ],
 )
 class $AppRouter {}

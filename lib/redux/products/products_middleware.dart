@@ -25,8 +25,8 @@ Middleware<AppState> _getProducts(ProductsRepository repository) {
   return (Store<AppState> store, dynamic action, NextDispatcher next) {
     running(next, action);
 
-    repository.getProducts(action.page).then((students) {
-      next(SyncProductsAction(students.second, students.first));
+    repository.getProducts().then((products) {
+      next(SyncProductsAction(products));
       completed(next, action);
     }).catchError((error) {
       String message = error.toString();
@@ -39,7 +39,7 @@ Middleware<AppState> _addProduct(ProductsRepository repository) {
   return (Store<AppState> store, dynamic action, NextDispatcher next) {
     running(next, action);
 
-    repository.addProduct(action.student).then((product) {
+    repository.addProduct(action.product).then((product) {
       next(SyncProductAction(product));
       completed(next, action);
     }).catchError((error) {
